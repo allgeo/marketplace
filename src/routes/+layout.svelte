@@ -5,6 +5,8 @@
 	import '../app.css';
 	import Navbar from '$lib/components/Navbar.svelte';
 
+	export let data;
+
 	onMount(() => {
 		const {
 			data: { subscription }
@@ -20,7 +22,7 @@
 </script>
 
 
-<Navbar />
+<Navbar data={data.session}/>
 <main class="w-4/5 p-5 mx-auto my-5 border rounded">
 	<slot />
 </main>
