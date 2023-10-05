@@ -6,6 +6,7 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 
 	export let data;
+	//console.log(data.session);
 
 	onMount(() => {
 		const {

@@ -9,18 +9,34 @@ export async function load({parent}) {
     }
 }
 
+function parseTags(input){
+    //Use this to modify tags as needed
+    let output = "";
+    return output;
+}
+
 export const actions = {
-    create: async ({cookies, request}) => {
+    create: async (event) => {
         //Create post in db if logged in, etc.
-        const formData = await request.formData();
+        const formData = await event.request.formData();
+        const sesh = event.locals.session;
+        //console.log(sesh);
+        let title = formData.get('title');
+        let desc = formData.get('title');
+        let uid = sesh.user.id;
+        let name = sesh.user.user_metadata.name;//Change this to using the (todo) built in name on our user table
+
         //Temp payload for testing. Either process tags here, or process them clientsided first
         //UID IS TEMP for TESTING ONLY
-        const payload = {   title:formData.get('title'), 
-                            desc:formData.get('desc'),
+        const payload = {   title:title, 
+                            desc:desc,
                             tags:formData.get('tags'),
-                            uid:'2c3fb581-53dc-49e7-b5eb-97ea1710ceac',
+                            uid:uid,
+                            name:name
                         };
-        const { error } = await supabaseClient.from("testposts").insert(payload);
-        console.log(error);
+        const { error } = await event.locals.sb.from("Posts").insert(payload);
+        if(error){
+            console.log(error);
+        }
     },
 }

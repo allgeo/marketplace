@@ -24,16 +24,16 @@ function parseTerms(terms){
 }
 
 export const actions = {
-    search: async ({ cookies, request }) => {
+    search: async (event) => {
         //Get posted form data
-		const formData = await request.formData();
+		const formData = await event.request.formData();
         const query = formData.get('terms');
         let data = [];
         //If query exists
         if(query != null){
             //console.log(parseTerms(query));
             //Select using parsed query
-            data = await supabaseClient.from("testposts").select().textSearch('fts', parseTerms(query));
+            data = await event.locals.sb.from("Posts").select().textSearch('fts', parseTerms(query));
         }
         //console.log(data.data);
         return{

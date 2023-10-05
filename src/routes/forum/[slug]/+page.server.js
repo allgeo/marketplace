@@ -1,11 +1,11 @@
 import { supabaseClient } from "$lib/supabase";
 import { error } from "@sveltejs/kit";
 
-export async function load({ params }){
-    let id = params.slug;
+export async function load(event){
+    let id = event.params.slug;
 
     //Get rows, find one with provided id
-    const { data } = await supabaseClient.from("testposts").select().eq("id", id);
+    const { data } = await event.locals.sb.from("Posts").select().eq("id", id);
     //console.log(id);
     //console.log(data);
     

@@ -1,8 +1,4 @@
 
-<script>
-    export let data;
-</script>
-
 <h1 class="text-xl font-bold mb-4">
     Create posting
 </h1>
