@@ -39,5 +39,21 @@ export const actions = {
         return{
             results: data.data,
         };
+	},
+    searchuser: async (event) => {
+        //Get posted form data
+		const formData = await event.request.formData();
+        const query = formData.get('terms');
+        let data = [];
+        //If query exists
+        if(query != null){
+            //console.log(parseTerms(query));
+            //Select using parsed query
+            data = await event.locals.sb.from("Users").select().textSearch('fts', parseTerms(query));
+        }
+        //console.log(data.data);
+        return{
+            user: data.data,
+        };
 	}
 };
