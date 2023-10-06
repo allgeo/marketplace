@@ -22,8 +22,9 @@
 	}
 </script>
 
-<div>
-	<div class="flex justify-center">
+
+
+	<!-- <div class="flex justify-center">
 		{#if data.session}
 		  <p>Welcome, <span class="px-2 py-1 text-green-600 rounded-md"> {data.session.user.user_metadata.name}</span>. Start your open source contribution today!</p>
 		{/if}
@@ -36,7 +37,7 @@
 		</form>
 	</div>
 
-	  <div class="posts">
+	<div class="posts">
 		<ul>
 			{#if form?.results}
 			<p>Search results:</p>
@@ -47,6 +48,41 @@
 			{/each}
 			{/if}
 		</ul>
+	</div> -->
+
+	<div class="grid grid-cols-3 gap-4">
+		<div class="col-span-2 p-6 ">
+			{#if data.session}
+			<div class="">
+				<h2 class="text-5xl">
+					search for projects!
+				</h2>
+			</div>
+			{/if}
+	
+			<div class="p-6">
+				<div class="mb-4 search">
+					<form method="post" action="?/search" class="flex items-center space-x-2">
+						<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="Search...">
+						<button type="submit" class="px-4 py-2 rounded bg-secondary">
+							search
+						</button>
+					</form>
+				</div>
+				
+				<div class="posts">
+					<ul>
+						{#if form?.results}
+						<p class="text-gray-700">search results</p>
+						{#each form.results as result}
+						<li class="text-blue-700">
+							📮<a class="underline" href="/forum/{result.id}">{result.title}</a>
+						</li>
+						{/each}
+						{/if}
+					</ul>
+				</div> 
+			</div>
+		</div>
 	</div>
-	  
-</div>
+	

@@ -23,9 +23,9 @@
 </script>
 
 
-<Navbar data={data.session}/>
-<main class="w-4/5 p-5 mx-auto my-5 border rounded">
-	<slot />
+<Navbar data={data.session} />
+<main class="w-4/5 h-screen mx-auto my-5"> 
+  <slot />
 </main>
 
 
