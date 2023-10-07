@@ -28,48 +28,12 @@
 		goto('/');
 	}
 </script>
-
-<!-- <nav class="flex flex-col px-6 py-4 font-sans text-center bg-white shadow sm:flex-row sm:text-left sm:justify-between sm:items-center">
-	<div class="mb-2 sm:mb-0">
-	  <button
-		on:click={goMain}
-		class="text-2xl no-underline text-grey-darkest hover:text-blue-dark"
-	  >
-		Marketplace
-	  </button>
-	</div>
-	{#if data}
-	  <div class="text-center sm:flex sm:justify-center sm:items-center">
-		<a href="/about" class="mb-2 text-lg no-underline text-blue-dark sm:mb-0">About Us</a>
-	  </div>
-	  <div class="flex items-center">
-		<form
-		  action="/logout"
-		  method="POST"
-		  use:enhance={submitLogout}
-		  class="text-lg no-underline text-grey-darkest hover:text-blue-dark"
-		>
-		  <button
-			type="submit"
-			class="inline-flex items-center px-4 py-2 font-bold text-gray-800 rounded bg-rose-200 hover:bg-gray-400"
-		  >Logout</button>
-		</form>
-		<button class="ml-4 text-lg no-underline text-grey-darkest hover:text-blue-dark">
-		  {data.user.user_metadata.name}
-		</button>
-	  </div>
-	{:else}
-	  <div class="flex items-center justify-center">
-		<a href="/about" class="text-lg no-underline text-blue-dark">About Us</a>
-	  </div>
-	{/if}
-  </nav> -->
   
-  <header class="bg-white">
-    <nav class="flex items-center justify-between p-6 px-8 mx-auto max-w-[90rem]">
+  <header class="">
+    <nav class="flex items-center justify-between py-6 mx-auto max-w-[90rem]">
       <div class="flex flex-1">
         <a href="/" class="-m-1.5 p-1.5">
-           <span class="text-lg text-white bg-black">marketplace</span> 
+           <span class="text-lg font-bold bg-black text-secondary">marketplace</span> 
           <!-- <img class="w-auto h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
         </a>
       </div>
@@ -93,7 +57,7 @@
 		
       {:else}
 	  <div class="flex gap-x-12">
-		<LinkUnderlined text="about-us" href="/about" />
+		<!-- <LinkUnderlined text="about-us" href="/about" /> -->
 	</div>
 	<div class="flex items-center justify-end flex-1 gap-x-6">
 		<form action="/logout" method="POST" use:enhance={submitLogout}>

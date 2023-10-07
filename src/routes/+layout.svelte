@@ -22,10 +22,10 @@
 	});
 </script>
 
-
-<Navbar data={data.session} />
-<main class="w-4/5 h-screen mx-auto my-5"> 
-  <slot />
-</main>
-
+<div class="dot">
+	<Navbar data={data.session} />
+	<main class="max-w-[90rem] h-screen mx-auto mt-20"> 
+	  <slot />
+	</main>	
+</div>
 
