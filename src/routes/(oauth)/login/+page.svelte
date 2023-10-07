@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms';
 	import { supabaseClient } from '$lib/supabase';
 	import type { Provider } from '@supabase/supabase-js';

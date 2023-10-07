@@ -34,8 +34,8 @@
 
 <!-- NEW FLEX-GRID SYSTEM -->
 <div class="grid grid-cols-4 grid-rows-1 gap-4">
-    <!-- Left div (independent) -->
-    <div class="col-span-3 col-start-1 overflow-hidden">
+    <!-- Post div (independent) -->
+    <div class="col-span-3 col-start-1 overflow-hidden ">
         <div class="flex flex-wrap overflow-hidden">
 			<!-- Search for projects -->
 			<div class="w-full mb-1">
@@ -76,11 +76,19 @@
 						{/if}
 					</ul>
 				</div>
+				<!-- New Post -->
+				<a href="/create">
+					<div class="flex items-center justify-center p-2 mb-2 text-white rounded-lg shadow-md align-center bg-lime-400">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+						  </svg>						  
+					</div>
+				</a>
 			</div>
 		</div>
     </div>
 
-    <!-- Right div (independent) -->
+    <!-- User div (independent) -->
     <div class="col-span-1 col-start-4 overflow-hidden ">
         <div class="flex flex-wrap overflow-hidden">
 			<!-- Search for user -->
@@ -127,6 +135,9 @@
 		</div>
     </div>
 </div>
+
+
+
 
 
 <!-- default posts -->
