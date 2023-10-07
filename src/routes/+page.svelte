@@ -31,7 +31,15 @@
 	  </div>
 
 	<div class="search">
+		<h1>Search for postings:</h1>
 		<form method="post" action="?/search">
+			<input type="text" name="terms" style="border: 1px solid">
+			<input type="submit" Value="Search">
+		</form>
+		
+		<br>
+		<h2>Search for users:</h2>
+		<form method="post" action="?/searchuser">
 			<input type="text" name="terms" style="border: 1px solid">
 			<input type="submit" Value="Search">
 		</form>
@@ -85,4 +93,20 @@
 			</div>
 		</div>
 	</div>
-	
+
+	<div class="users">
+		<ul>
+			{#if form?.user}
+			<p>Search results:</p>
+			{#each form.user as user}
+			<li>
+				<a class="underline" href="/user/{user.id}">{user.name}</a>
+				<p>Description: {user.description}</p>
+				<p>Tags: {user.tags}</p>
+			</li>
+			{/each}
+			{/if}
+		</ul>
+	</div>
+	  
+</div>
