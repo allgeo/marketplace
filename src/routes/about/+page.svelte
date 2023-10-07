@@ -7,10 +7,11 @@
 <div class="grid grid-cols-3 grid-rows-1 gap-1 mt-24">
     <!-- Eric -->
     <div class="flex items-center rounded-md">
-        <img class="w-32 h-32 rounded-lg" src="https://placehold.co/400" alt="">
+        <!-- <img class="w-32 h-32 rounded-lg" src="https://placehold.co/400" alt=""> -->
+        <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id=":rj:" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#:rj:)"><rect width="36" height="36" fill="#94b053"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-4 8) rotate(168 18 18) scale(1)" fill="#bffa37" rx="36"></rect><g transform="translate(0 4) rotate(-8 18 18)"><path d="M13,19 a1,0.75 0 0,0 10,0" fill="#000000"></path><rect x="11" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="23" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
         <div class="ml-4">
-            <h1 class="text-white bg-black text-7xl">Eric</h1>
-            <p class="mb-4 text-xs ">Student and Developer</p>
+            <h1 class="text-black bg-secondary text-7xl">Eric</h1>
+            <p class="mb-4 text-xs text-white bg-black">Student and Developer</p>
             <a href="#" class="inline-block" > 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="#0A66C2">
                     <path d="M44.46 0H3.54C2.60 0 1.70 0.37 1.04 1.04C0.37 1.70 0 2.60 0 3.54V44.46C0 45.40 0.37 46.30 1.04 46.96C1.70 47.63 2.60 48 3.54 48H44.46C45.40 48 46.30 47.63 46.96 46.96C47.63 46.30 48 45.40 48 44.46V3.54C48 2.60 47.63 1.70 46.96 1.04C46.30 0.37 45.40 0 44.46 0ZM14.31 40.89H7.09V17.97H14.31V40.89ZM10.69 14.79C9.87 14.79 9.08 14.54 8.40 14.08C7.72 13.62 7.19 12.97 6.88 12.22C6.57 11.46 6.49 10.63 6.66 9.82C6.82 9.02 7.22 8.28 7.80 7.71C8.38 7.13 9.12 6.74 9.92 6.58C10.72 6.42 11.55 6.51 12.31 6.82C13.07 7.14 13.71 7.67 14.16 8.35C14.62 9.03 14.86 9.83 14.86 10.65C14.87 11.20 14.77 11.74 14.56 12.25C14.35 12.76 14.04 13.22 13.66 13.60C13.27 13.99 12.80 14.29 12.29 14.50C11.79 14.70 11.24 14.79 10.69 14.79ZM40.91 40.91H33.69V28.39C33.69 24.69 32.12 23.55 30.10 23.55C27.96 23.55 25.86 25.17 25.86 28.48V40.91H18.64V17.98H25.58V21.16H25.67C26.37 19.75 28.81 17.34 32.53 17.34C36.56 17.34 40.91 19.73 40.91 26.73L40.91 40.91Z"/>
@@ -27,10 +28,11 @@
     <div></div>
     <!-- Vikram -->
     <div class="flex items-center rounded-md">
-        <img class="w-32 h-32 rounded-lg" src="https://placehold.co/400" alt="">
+        <!-- <img class="w-32 h-32 rounded-lg" src="https://placehold.co/400" alt=""> -->
+        <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id=":rq:" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#:rq:)"><rect width="36" height="36" fill="#bffa36"></rect><rect x="0" y="0" width="36" height="36" transform="translate(6 -2) rotate(296 18 18) scale(1.2)" fill="#c0e289" rx="6"></rect><g transform="translate(0 -4) rotate(6 18 18)"><path d="M15 21c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="13" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="21" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
         <div class="ml-4">
-            <h1 class="text-white bg-black text-7xl">Vikram</h1>
-            <p class="mb-4 text-xs ">Student and Developer</p>
+            <h1 class="text-black bg-secondary text-7xl">Vikram</h1>
+            <p class="mb-4 text-xs text-white bg-black">Student and Developer</p>
             <a href="#" class="inline-block" > 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="#0A66C2">
                     <path d="M44.46 0H3.54C2.60 0 1.70 0.37 1.04 1.04C0.37 1.70 0 2.60 0 3.54V44.46C0 45.40 0.37 46.30 1.04 46.96C1.70 47.63 2.60 48 3.54 48H44.46C45.40 48 46.30 47.63 46.96 46.96C47.63 46.30 48 45.40 48 44.46V3.54C48 2.60 47.63 1.70 46.96 1.04C46.30 0.37 45.40 0 44.46 0ZM14.31 40.89H7.09V17.97H14.31V40.89ZM10.69 14.79C9.87 14.79 9.08 14.54 8.40 14.08C7.72 13.62 7.19 12.97 6.88 12.22C6.57 11.46 6.49 10.63 6.66 9.82C6.82 9.02 7.22 8.28 7.80 7.71C8.38 7.13 9.12 6.74 9.92 6.58C10.72 6.42 11.55 6.51 12.31 6.82C13.07 7.14 13.71 7.67 14.16 8.35C14.62 9.03 14.86 9.83 14.86 10.65C14.87 11.20 14.77 11.74 14.56 12.25C14.35 12.76 14.04 13.22 13.66 13.60C13.27 13.99 12.80 14.29 12.29 14.50C11.79 14.70 11.24 14.79 10.69 14.79ZM40.91 40.91H33.69V28.39C33.69 24.69 32.12 23.55 30.10 23.55C27.96 23.55 25.86 25.17 25.86 28.48V40.91H18.64V17.98H25.58V21.16H25.67C26.37 19.75 28.81 17.34 32.53 17.34C36.56 17.34 40.91 19.73 40.91 26.73L40.91 40.91Z"/>
@@ -47,10 +49,11 @@
     <div></div>
     <!-- Allan -->
     <div class="flex items-center rounded-md">
-        <img class="w-32 h-32 rounded-lg" src="https://placehold.co/400" alt="">
+        <!-- <img class="w-32 h-32 rounded-lg" src="https://placehold.co/400" alt=""> -->
+        <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id=":r1p:" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#:r1p:)"><rect width="36" height="36" fill="#caf729"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-3 -3) rotate(67 18 18) scale(1.1)" fill="#bffa36" rx="36"></rect><g transform="translate(-3 -6) rotate(7 18 18)"><path d="M15 20c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="12" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="22" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
         <div class="ml-4">
-            <h1 class="text-white bg-black text-7xl">Allan</h1>
-            <p class="mb-4 text-xs ">Student and Developer</p>
+            <h1 class="text-black bg-secondary text-7xl">Allan</h1>
+            <p class="mb-4 text-xs text-white bg-black">Student and Developer</p>
             <a href="#" class="inline-block" > 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="#0A66C2">
                     <path d="M44.46 0H3.54C2.60 0 1.70 0.37 1.04 1.04C0.37 1.70 0 2.60 0 3.54V44.46C0 45.40 0.37 46.30 1.04 46.96C1.70 47.63 2.60 48 3.54 48H44.46C45.40 48 46.30 47.63 46.96 46.96C47.63 46.30 48 45.40 48 44.46V3.54C48 2.60 47.63 1.70 46.96 1.04C46.30 0.37 45.40 0 44.46 0ZM14.31 40.89H7.09V17.97H14.31V40.89ZM10.69 14.79C9.87 14.79 9.08 14.54 8.40 14.08C7.72 13.62 7.19 12.97 6.88 12.22C6.57 11.46 6.49 10.63 6.66 9.82C6.82 9.02 7.22 8.28 7.80 7.71C8.38 7.13 9.12 6.74 9.92 6.58C10.72 6.42 11.55 6.51 12.31 6.82C13.07 7.14 13.71 7.67 14.16 8.35C14.62 9.03 14.86 9.83 14.86 10.65C14.87 11.20 14.77 11.74 14.56 12.25C14.35 12.76 14.04 13.22 13.66 13.60C13.27 13.99 12.80 14.29 12.29 14.50C11.79 14.70 11.24 14.79 10.69 14.79ZM40.91 40.91H33.69V28.39C33.69 24.69 32.12 23.55 30.10 23.55C27.96 23.55 25.86 25.17 25.86 28.48V40.91H18.64V17.98H25.58V21.16H25.67C26.37 19.75 28.81 17.34 32.53 17.34C36.56 17.34 40.91 19.73 40.91 26.73L40.91 40.91Z"/>

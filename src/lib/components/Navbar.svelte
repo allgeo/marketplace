@@ -4,8 +4,9 @@
 	import { sessionStore } from '$lib/store/sessionStore';
 	import { supabaseClient } from '$lib/supabase';
 	import { onMount } from 'svelte';
-	import LinkUnderlined  from './LinkUnderlined.svelte';
+	import LinkUnderlined  from './LinkUnderlined.svelte';	
 	import {page} from "$app/stores";
+
 
 	export let data;
 
@@ -34,16 +35,16 @@
   <header class="">
     <nav class="flex items-center justify-between py-6 mx-auto max-w-[90rem]">
       <div class="flex flex-1">
-        <a href="/" class="-m-1.5 p-1.5">
-           <span class="text-lg font-bold bg-black text-secondary">marketplace</span> 
-          <!-- <img class="w-auto h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
+        <a href="/" class="-m-1.5 p-1.5 ">
+			<!-- <img class="inline-block w-auto h-6" src="/branch.png" alt=""> -->
+			<span class="text-lg font-bold bg-black text-secondary">marketplace</span> 
         </a>
       </div>
-      {#if data}
+      {#if data}	
         <div class="flex gap-x-12">
             <LinkUnderlined text="Home" href="/" />
             <LinkUnderlined text="About us" href="/about" />
-			<LinkUnderlined text="Create a posting" href="/create"/>
+			<LinkUnderlined text="Create a post" href="/create"/>
         </div>
         <div class="flex items-center justify-end flex-1 gap-x-6">
 			<form action="/logout" method="POST" use:enhance={submitLogout}>
