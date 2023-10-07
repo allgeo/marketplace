@@ -1,0 +1,23 @@
+import { supabaseClient } from "$lib/supabase";
+import { error } from "@sveltejs/kit";
+
+export async function load(event){
+    let id = event.params.slug;
+
+    //Get rows, find one with provided id
+    const { data } = await event.locals.sb.from("Posts").select().eq("id", id);
+    //console.log(id);
+    //console.log(data);
+    
+    //No results, return 404
+    if(data == null){
+        throw error(404, 'Forum not found');
+    }
+    if(data.length <= 0){
+        throw error(404, 'Forum not found');
+    }
+
+    return{
+        post:data[0],
+    };
+}

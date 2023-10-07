@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 
 	export let data;
+	export let form;
 
 	onMount(() => {
 		sessionStore.set(data.session);
@@ -27,5 +28,49 @@
 		  <p>Welcome, <span class="px-2 py-1 text-green-600 rounded-md"> {data.session.user.user_metadata.name}</span>. Start your open source contribution today!</p>
 		{/if}
 	  </div>
+
+	<div class="search">
+		<h1>Search for postings:</h1>
+		<form method="post" action="?/search">
+			<input type="text" name="terms" style="border: 1px solid">
+			<input type="submit" Value="Search">
+		</form>
+		
+		<br>
+		<h2>Search for users:</h2>
+		<form method="post" action="?/searchuser">
+			<input type="text" name="terms" style="border: 1px solid">
+			<input type="submit" Value="Search">
+		</form>
+	</div>
+
+	  <div class="posts">
+		<ul>
+			{#if form?.results}
+			<p>Search results:</p>
+			{#each form.results as result}
+			<li>
+				📮<a class="underline" href="/forum/{result.id}">{result.title}</a>
+			</li>
+			{/each}
+			{/if}
+		</ul>
+	</div>
+
+
+	<div class="users">
+		<ul>
+			{#if form?.user}
+			<p>Search results:</p>
+			{#each form.user as user}
+			<li>
+				<a class="underline" href="/user/{user.id}">{user.name}</a>
+				<p>Description: {user.description}</p>
+				<p>Tags: {user.tags}</p>
+			</li>
+			{/each}
+			{/if}
+		</ul>
+	</div>
 	  
 </div>

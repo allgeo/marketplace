@@ -5,7 +5,7 @@
 	import { supabaseClient } from '$lib/supabase';
 	import { onMount } from 'svelte';
 
-	let data;
+	export let data;
 
 	const submitLogout = async ({ cancel }) => {
 		const { error } = await supabaseClient.auth.signOut();
@@ -23,15 +23,15 @@
 		data = $sessionStore;
 	}
 
-	console.log(data)
+	function goMain(){
+		goto('/');
+	}
 </script>
 
 <nav class="flex flex-col px-6 py-4 font-sans text-center bg-white shadow sm:flex-row sm:text-left sm:justify-between sm:items-center">
 	<div class="mb-2 sm:mb-0">
 	  <button
-		on:click={() => {
-		  goto('/');
-		}}
+		on:click={goMain}
 		class="text-2xl no-underline text-grey-darkest hover:text-blue-dark"
 	  >
 		Marketplace
