@@ -3,8 +3,6 @@
 	import { supabaseClient } from '$lib/supabase';
 	import type { Provider } from '@supabase/supabase-js';
 	import { onDestroy, onMount } from 'svelte';
-	import { sessionStore } from '$lib/store/sessionStore';
-	import { goto } from '$app/navigation';
 
 	const signInWithProvider = async (provider: Provider) => {
 		const { data, error } = await supabaseClient.auth.signInWithOAuth({

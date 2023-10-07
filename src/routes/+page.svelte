@@ -14,6 +14,7 @@
 				window.location.href = '/login';
 			}
 		}, 500);
+
 	});
 
 	// React to changes in sessionStore
@@ -48,7 +49,7 @@
 						<p class="text-gray-700">Search Results:</p>
 						{#each form.results as result}
 						<li class="text-blue-700">
-							📮<a class="underline" href="/forum/{result.id}">{result.title}</a>
+							<a class="underline" href="/forum/{result.id}">{result.title}</a>
 						</li>
 						{/each}
 						{/if}

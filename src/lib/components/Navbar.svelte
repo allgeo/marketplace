@@ -5,6 +5,7 @@
 	import { supabaseClient } from '$lib/supabase';
 	import { onMount } from 'svelte';
 	import LinkUnderlined  from './LinkUnderlined.svelte';
+	import {page} from "$app/stores";
 
 	export let data;
 
@@ -20,13 +21,14 @@
 	};
 
 	$: if ($sessionStore) {
-		console.log($sessionStore);
+		//console.log($sessionStore);
 		data = $sessionStore;
 	}
 
 	function goMain(){
 		goto('/');
 	}
+
 </script>
   
   <header class="">
@@ -39,8 +41,9 @@
       </div>
       {#if data}
         <div class="flex gap-x-12">
-            <LinkUnderlined text="home" href="/" />
-            <LinkUnderlined text="about-us" href="/about" />
+            <LinkUnderlined text="Home" href="/" />
+            <LinkUnderlined text="About us" href="/about" />
+			<LinkUnderlined text="Create a posting" href="/create"/>
         </div>
         <div class="flex items-center justify-end flex-1 gap-x-6">
 			<form action="/logout" method="POST" use:enhance={submitLogout}>
@@ -60,12 +63,15 @@
 		<!-- <LinkUnderlined text="about-us" href="/about" /> -->
 	</div>
 	<div class="flex items-center justify-end flex-1 gap-x-6">
-		<form action="/logout" method="POST" use:enhance={submitLogout}>
+		{#if $page.url.pathname != "/login"}
+		<form action="/login" method="POST" use:enhance={submitLogout}>
 			<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
-				<span class="px-4 py-4"> sign-in </span>
+				<span class="px-4 py-4"> Sign in </span>
 			  </button>
 		</form>
+		{/if}
 	</div>
+
     {/if}
     </nav>
   </header> 
