@@ -97,15 +97,15 @@
 	  <div class="flex gap-x-12">
 		<LinkUnderlined text="about-us" href="/about" />
 	</div>
-	{#if $page.url.pathname != "/login"}
 	<div class="flex items-center justify-end flex-1 gap-x-6">
+		{#if $page.url.pathname != "/login"}
 		<form action="/login" method="POST" use:enhance={submitLogout}>
 			<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
 				<span class="px-4 py-4"> sign-in </span>
 			  </button>
 		</form>
-	</div> 
-	{/if}
+		{/if}
+	</div>
 
     {/if}
     </nav>
