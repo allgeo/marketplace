@@ -7,12 +7,12 @@
 	export let form;
 
 	onMount(() => {
+		if (!data.session) {
+				window.location.href = '/login';
+		}
 		sessionStore.set(data.session);
 		setTimeout(() => {
 			sessionStore.set(data.session);
-			if (!data.session) {
-				window.location.href = '/login';
-			}
 		}, 500);
 	});
 

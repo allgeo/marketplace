@@ -5,6 +5,7 @@
 	import { supabaseClient } from '$lib/supabase';
 	import { onMount } from 'svelte';
 	import LinkUnderlined  from './LinkUnderlined.svelte';
+	import {page} from "$app/stores";
 
 	export let data;
 
@@ -96,14 +97,16 @@
 	  <div class="flex gap-x-12">
 		<LinkUnderlined text="about-us" href="/about" />
 	</div>
-	<!--
+	{#if $page.url.pathname != "/login"}
 	<div class="flex items-center justify-end flex-1 gap-x-6">
 		<form action="/login" method="POST" use:enhance={submitLogout}>
 			<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
 				<span class="px-4 py-4"> sign-in </span>
 			  </button>
 		</form>
-	</div> -->
+	</div> 
+	{/if}
+
     {/if}
     </nav>
   </header> 

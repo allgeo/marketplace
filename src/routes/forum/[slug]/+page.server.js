@@ -1,4 +1,3 @@
-import { supabaseClient } from "$lib/supabase";
 import { error } from "@sveltejs/kit";
 
 export async function load(event){
