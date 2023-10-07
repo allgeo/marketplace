@@ -52,7 +52,6 @@ export const actions = {
             //Select using parsed query
             data = await event.locals.sb.from("Users").select().textSearch('fts', parseTerms(query));
         }
-
         return{
             user: data.data,
         };

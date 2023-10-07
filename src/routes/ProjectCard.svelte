@@ -20,10 +20,10 @@
     </div>
     
     <!-- Title -->
-    <h2 class="mt-2 text-xl font-semibold">{title}</h2>
+    <h2 class="mt-2 text-xl font-semibold ">{title}</h2>
     
     <!-- Description -->
-    <p class="mt-2 text-gray-700">{description}</p>
+    <p class="mt-2 ">{description}</p>
     
     <!-- Tag -->
     <div class="mt-2">

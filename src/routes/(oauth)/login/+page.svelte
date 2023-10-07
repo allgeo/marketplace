@@ -40,14 +40,13 @@
 	</div>
   
 	<div class="flex gap-4 justify-left">
-	  <form action="?/login" method="POST" class="">
 		<form class="" method="POST" use:enhance={submitSocialLogin}>
 		  <button class="px-1 py-1 text-lg font-bold duration-300 ease-in-out bg-black text-secondary hover:text-lime-500" formaction="?/login&provider=google">
 			sign-in
 		  </button>
 		</form>
-	  </form>
-	</div>
+	  </div>
+	  
   
 	<!-- <img src="/git-branch.png" alt="" class="left-[47.8rem] top-[10.5rem] absolute lg:block md:hidden"> -->
 	<!-- <div class="absolute rounded-full bg-lime-200 bottom-52 right-20 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div> -->

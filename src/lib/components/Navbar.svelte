@@ -41,7 +41,7 @@
         </a>
       </div>
       {#if data}	
-        <div class="flex gap-x-12">
+        <div class="flex rounded gap-x-12">
             <LinkUnderlined text="Home" href="/" />
             <LinkUnderlined text="About us" href="/about" />
 			<LinkUnderlined text="Create a post" href="/create"/>
