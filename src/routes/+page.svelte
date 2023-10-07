@@ -126,7 +126,8 @@
 							<li class="text-blue-700">
 								<ProjectCard
 									title={result.title}
-									description={result.desc}
+									description={result.description}
+									views={result.views}
 									tag={result.tags}
 									userFirstLetter={result.name.charAt(0)}
 									user={result.name}

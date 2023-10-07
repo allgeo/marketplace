@@ -26,7 +26,7 @@
   <!-- Description -->
   <div class="my-2">
     <label for="" class="text-xs text-gray-400">description</label>
-    <p class="mt-">{data.post.desc}</p>
+    <p class="mt-">{data.post.description}</p>
   </div>
 
   <!-- Tag -->

@@ -4,6 +4,7 @@
     export let tag;
     export let userFirstLetter;
     export let user;
+    export let views;
 </script>
 
 <div class="p-2 mb-2 bg-white border rounded-lg shadow-md border-lime-100">
@@ -15,6 +16,7 @@
             </div>
         </a>
         <span class="text-sm text-gray-600">Posted by {user}</span>
+        <span class="text-sm">Views: {views}</span>
     </div>
     
     <!-- Title -->
