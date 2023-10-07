@@ -31,33 +31,22 @@
 	});
 </script>
 
-<section class="h-screen">
-	<div class="px-6 py-24 ">
-		<div class="flex justify-center">
-			<!-- <h1 class="mb-4 text-xl font-semibold">Login with Google!</h1> -->
-		</div>
-		<div class="flex flex-wrap items-center justify-center ">
-			<!-- Right column container with form -->
-			<div class="md:w-8/12 lg:ml-6 lg:w-5/12">
-				<form action="?/login" method="POST" class="">
-					<div class="flex items-center justify-center">
-						<form class="" method="POST" use:enhance={submitSocialLogin}>
-							<button class="flex items-center justify-center underline underline-offset-2" formaction="?/login&provider=google">
-								<img
-									src="google.png"
-									class="h-12 mr-2"
-									alt=""
-								/>
-								Signin with Google
-							</button>
-						</form>
-					</div>
-				</form>
-			</div>
-		</div>
+
+<div class="max-w-4xl pt-8 ">
+	<h1 class="font-bold text-9xl">
+		Open-source <span class="text-7xl text-secondary"> Made</span> Easier!
+	</h1>
+	<p class="py-6 text-xl font-thin">
+		Start your open source contribution today.
+	</p>
+	<div class="flex gap-4 justify-left">
+		<form action="?/login" method="POST" class="">
+			<form class="" method="POST" use:enhance={submitSocialLogin}>
+				<button class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500" formaction="?/login&provider=google">
+					sign-in
+				</button>
+			</form>
+		</form>
 	</div>
-</section>
+</div>
 
-<style>
-
-</style>
