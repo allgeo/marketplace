@@ -22,14 +22,14 @@ export const actions = {
         const sesh = event.locals.session;
         //console.log(sesh);
         let title = formData.get('title');
-        let desc = formData.get('title');
+        let description = formData.get('description');
         let uid = sesh.user.id;
         let name = sesh.user.user_metadata.name;//Change this to using the (todo) built in name on our user table
 
         //Temp payload for testing. Either process tags here, or process them clientsided first
         //UID IS TEMP for TESTING ONLY
         const payload = {   title:title, 
-                            desc:desc,
+                            description:description,
                             tags:formData.get('tags'),
                             uid:uid,
                             name:name
