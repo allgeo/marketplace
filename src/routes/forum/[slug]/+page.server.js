@@ -16,6 +16,8 @@ export async function load(event){
         throw error(404, 'Forum not found');
     }
 
+    let { d, err } = await event.locals.sb.rpc("increment_views_post", {post_id:id,});
+
     return{
         post:data[0],
     };
