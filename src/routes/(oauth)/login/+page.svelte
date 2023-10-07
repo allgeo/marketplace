@@ -41,7 +41,7 @@
 		<form action="?/login" method="POST" class="">
 			<form class="" method="POST" use:enhance={submitSocialLogin}>
 				<button class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500" formaction="?/login&provider=google">
-					sign-in
+					Sign in
 				</button>
 			</form>
 		</form>
