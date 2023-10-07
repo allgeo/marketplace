@@ -21,7 +21,7 @@
 	};
 
 	$: if ($sessionStore) {
-		console.log($sessionStore);
+		//console.log($sessionStore);
 		data = $sessionStore;
 	}
 
@@ -77,8 +77,9 @@
       </div>
       {#if data}
         <div class="flex gap-x-12">
-            <LinkUnderlined text="home" href="/" />
-            <LinkUnderlined text="about-us" href="/about" />
+            <LinkUnderlined text="Home" href="/" />
+            <LinkUnderlined text="About us" href="/about" />
+			<LinkUnderlined text="Create a posting" href="/create"/>
         </div>
         <div class="flex items-center justify-end flex-1 gap-x-6">
 			<form action="/logout" method="POST" use:enhance={submitLogout}>
