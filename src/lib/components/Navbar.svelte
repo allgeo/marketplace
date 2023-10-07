@@ -27,6 +27,7 @@
 	function goMain(){
 		goto('/');
 	}
+
 </script>
 
 <!-- <nav class="flex flex-col px-6 py-4 font-sans text-center bg-white shadow sm:flex-row sm:text-left sm:justify-between sm:items-center">
@@ -69,7 +70,7 @@
     <nav class="flex items-center justify-between p-6 px-8 mx-auto max-w-[90rem]">
       <div class="flex flex-1">
         <a href="/" class="-m-1.5 p-1.5">
-           <span class="text-lg text-white bg-black">marketplace</span> 
+           <span class="text-lg text-white bg-black">Marketplace</span> 
           <!-- <img class="w-auto h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
         </a>
       </div>
@@ -95,13 +96,14 @@
 	  <div class="flex gap-x-12">
 		<LinkUnderlined text="about-us" href="/about" />
 	</div>
+	<!--
 	<div class="flex items-center justify-end flex-1 gap-x-6">
-		<form action="/logout" method="POST" use:enhance={submitLogout}>
+		<form action="/login" method="POST" use:enhance={submitLogout}>
 			<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
 				<span class="px-4 py-4"> sign-in </span>
 			  </button>
 		</form>
-	</div>
+	</div> -->
     {/if}
     </nav>
   </header> 
