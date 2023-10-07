@@ -52,7 +52,7 @@
 	<!-- <img src="/git-branch.png" alt="" class="left-[47.8rem] top-[10.5rem] absolute lg:block md:hidden"> -->
 	<!-- <div class="absolute rounded-full bg-lime-200 bottom-52 right-20 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div> -->
 	
-    <img src="./branch.png" class="absolute w-auto sm:hidden lg:block -bottom-32 -right-56 h-96" alt="">
+    <img src="./branch-face.png" class="absolute w-auto sm:hidden lg:block -bottom-32 -right-56 h-96" alt="">
 	
 
 	<!-- <div class="absolute bottom-96 right-96">
