@@ -1,5 +1,7 @@
 <script>
   import {enhance} from "$app/forms";
+  import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+
   export let data;
 
   function formatTimestamp(timestamp) {
@@ -20,7 +22,7 @@
       <!-- Title -->
       <div class="my-2">
         <label for="" class="text-xs text-gray-400">Title</label>
-        <p class="">{data.post.title}</p>
+        <p class="font-bold">{data.post.title}</p>
       </div>
       
       <!-- User avatar -->
@@ -61,33 +63,44 @@
         <p class="">{formatTimestamp(data.post.updated_at)}</p>
       </div>
 
+      <!-- EDIT POST -->
       {#if data.post.uid === data.session.user.id}
-      <div class="my-2 bg-gray-300"> <!--TEMP GRAY BG FOR VISIBLITY, REPLACE CSS W/SMTH THAT LOOKS GOOD INSTEAD-->
-        <form method="POST" action="?/edit" use:enhance>
-          <label for="title" class="block mb-2 font-bold rounded order-gray-300 ">Title</label>
-          <input type="text" name="title">
-          <label for="description" class="block mb-2 font-bold rounded order-gray-300 ">Description</label>
-          <textarea name="description"></textarea>
-          <label for="tags" class="block mb-2 font-bold rounded order-gray-300 ">Tags</label>
-          <input type="text" name="tags">
-          <label for="url" class="block mb-2 font-bold rounded order-gray-300 ">URL</label>
-          <input type="text" name="url">
-          <div class="flex justify-start mt-4">
-            <button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
-                <span class="px-4 py-4"> Edit post </span>
-              </button>
-        </div>
-        </form>
-        <form method="post" action="?/delete">
-          <div class="flex justify-end mt-4">
-            <button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-red-500">
-                <span class="px-4 py-4"> Delete post </span>
-              </button>
-        </div>
-        </form>
-      </div>
+      <Accordion class="mt-4 border rounded-lg">
+        <AccordionItem open>
+          <svelte:fragment slot="summary"><p class="mt-2 text-gray-600">Update post</p></svelte:fragment>
+          <svelte:fragment slot="content">
+              <form method="POST" action="?/edit" use:enhance>
+                  <label for="title" class="mb-2 text-xs text-gray-400" >Change title</label>
+                  <input type="text" name="title" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="New project name"><br>
+      
+                  <label for="description" class="mb-2 text-xs text-gray-400" >Change description</label>
+                  <textarea name="description" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="New project description"></textarea><br>
+      
+                  <label for="tags" class="mb-2 text-xs text-gray-400">Change tag</label>
+                  <input type="text" name="tags" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="New project tags"><br>
+      
+                  <label for="url" class="mb-2 text-xs text-gray-400">Change URL</label>
+                  <input type="text" name="url" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="New project URL"><br>
+                      
+                  <div class="flex justify-between mt-2">
+                    <button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
+                      <span class="px-4 py-4">Submit</span>
+                    </button>
+      
+                    <form method="post" action="?/delete">
+                      <button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out bg-red-300 rounded-md hover:bg-red-400 ">
+                        <span class="px-2 py-4">Delete post</span>
+                      </button>
+                    </form>
+                  </div>
+                </form>
+              </svelte:fragment>
+            </AccordionItem>
+          </Accordion>
       {/if}
 
   </div>
-  
+
 </div>
+
+
