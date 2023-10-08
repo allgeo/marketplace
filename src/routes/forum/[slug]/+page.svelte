@@ -76,7 +76,7 @@
                   <label for="description" class="mb-2 text-xs text-gray-400" >Change description</label>
                   <textarea name="description" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="New project description"></textarea><br>
       
-                  <label for="tags" class="mb-2 text-xs text-gray-400">Change tag</label>
+                  <label for="tags" class="mb-2 text-xs text-gray-400">Change tags(Delimit/seperate with commas)</label>
                   <input type="text" name="tags" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="New project tags"><br>
       
                   <label for="url" class="mb-2 text-xs text-gray-400">Change URL</label>

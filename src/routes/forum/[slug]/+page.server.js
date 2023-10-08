@@ -51,7 +51,7 @@ export const actions = {
             delete data['updated_at'];
             delete data['views'];
             delete data['id'];
-    
+            
             ({error} = await event.locals.sb.from("Posts").update(data).eq('id',id));
             if(error){
                 console.log(error);
