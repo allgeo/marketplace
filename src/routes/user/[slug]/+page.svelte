@@ -53,7 +53,16 @@
         <form method="POST" action="?/cleartags" use:enhance>
           <input type="submit" value="Clear ALL user tags" class="text-white bg-black">
         </form>
+      {:else}
+
+      <form method="POST" action="?/msg">
+        <label for="message">Send a message:</label>
+        <textarea name="message"></textarea><br>
+        <input type="submit" value="Send">
+      </form>
+
       {/if}
+      
     </div>
 
   </div>

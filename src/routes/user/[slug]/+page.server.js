@@ -1,4 +1,5 @@
 import { error } from "@sveltejs/kit";
+import {redirect} from "@sveltejs/kit";
 
 export async function load(event){
     let id = event.params.slug;
@@ -52,5 +53,33 @@ export const actions = {
         //Clears all tags
         let id=event.params.slug;
         const {error} = await event.locals.sb.from("Users").update({tags:""}).eq('id',id);
-    }
+    },
+    msg: async(event)=>{
+        let oid = event.params.slug;
+        let uid = event.locals.session.user.id;
+        const formData = await event.request.formData();
+        
+        //Ouid should be data.uid
+        let {data, error} = await event.locals.sb.from("Users").select("uid").eq("id", oid).single();
+
+        let message = formData.get("message");
+
+        if(data){
+            const payload = {
+                message:message,
+                receiver_uid:data.uid,
+                sender_uid:uid
+            };
+
+            if(message.length > 0){
+                ({data, error} = await event.locals.sb.from("Messages").insert(payload).select().single());
+                console.log(data, error);
+                if(data){
+                    throw redirect(307, `/messages/${data.id}`);
+                }
+            }
+        }
+
+    },
+
 };
