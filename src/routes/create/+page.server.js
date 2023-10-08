@@ -36,9 +36,13 @@ export const actions = {
                             name:name,
                             url:url
                         };
-        const { error } = await event.locals.sb.from("Posts").insert(payload);
+        let {data, error } = await event.locals.sb.from("Posts").insert(payload).select().single();
+        console.log(data);
         if(error){
             console.log(error);
+        }
+        else{
+            throw redirect(303, `/forum/${data.id}`);
         }
     },
 }
