@@ -72,6 +72,7 @@
 									tag={result.tags}
 									userFirstLetter={result.name.charAt(0)}
 									user={result.name}
+									url={result.url}
 								/>
 							</li>
 						</a>

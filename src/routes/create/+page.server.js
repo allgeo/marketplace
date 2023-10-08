@@ -22,6 +22,7 @@ export const actions = {
         const sesh = event.locals.session;
         //console.log(sesh);
         let title = formData.get('title');
+        let url = formData.get('url');
         let description = formData.get('description');
         let uid = sesh.user.id;
         let name = sesh.user.user_metadata.name;//Change this to using the (todo) built in name on our user table
@@ -32,7 +33,8 @@ export const actions = {
                             description:description,
                             tags:formData.get('tags'),
                             uid:uid,
-                            name:name
+                            name:name,
+                            url:url
                         };
         const { error } = await event.locals.sb.from("Posts").insert(payload);
         if(error){

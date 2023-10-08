@@ -76,7 +76,7 @@
 		</div>
 	</div>
 
-	<p class="w-1/2 p-1 mt-24 mb-2 text-3xl text-center">We are also <span class="bg-secondary">open-source</span>, Contribute and help us help others!</p>
+	<p class="w-1/2 p-1 mt-24 mb-2 text-3xl text-center text-gray-500">We are also <span class="">open-source</span>, Contribute to help us help others!</p>
 
     <div class="px-2 text-white rounded bg-secondary">
         <a href="https://github.com/allgeo/marketplace" target="_blank" class="text-[12px] hover:text-black">find us on github!</a>

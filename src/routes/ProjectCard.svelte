@@ -5,9 +5,13 @@
     export let userFirstLetter;
     export let user;
     export let views;
+    // export let url;
+
+    let tagsArray = tag.split(/,| /).filter(tagItem => tagItem.trim() !== '');
+
 </script>
 
-<div class="p-2 mb-2 bg-white border rounded-lg shadow-md border-lime-100">
+<div class="p-2 mb-2 border rounded-lg shadow-md bg-lime-50 border-lime-100">
     <div class="flex items-center justify-between">
         <!-- Left side - user avatar and information -->
         <div class="flex items-center">
@@ -35,9 +39,15 @@
     
     <!-- Description -->
     <p class="mt-2 ">{description}</p>
+
+    <!-- URL -->
+    <!-- <a href="{url}" class="mt-2 underline"> link</a> -->
+    <!-- <p class="mt-2 ">{url}</p> -->
     
     <!-- Tag -->
     <div class="mt-2">
-        <span class="px-2 py-1 text-sm text-black rounded-md bg-secondary">{tag}</span>
-    </div>
+      {#each tagsArray as tagItem}
+          <span class="px-2 py-1 text-[10px] text-black rounded-md bg-secondary mr-2">{tagItem}</span>
+      {/each}
+  </div>
 </div>
