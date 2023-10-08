@@ -78,6 +78,13 @@
               </button>
         </div>
         </form>
+        <form method="post" action="?/delete">
+          <div class="flex justify-end mt-4">
+            <button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-red-500">
+                <span class="px-4 py-4"> Delete post </span>
+              </button>
+        </div>
+        </form>
       </div>
       {/if}
 

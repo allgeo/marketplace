@@ -1,4 +1,5 @@
-import { error } from "@sveltejs/kit";
+import { error, redirect} from "@sveltejs/kit";
+
 
 export async function load(event){
     let id = event.params.slug;
@@ -24,31 +25,6 @@ export async function load(event){
 }
 
 export const actions = {
-    create: async (event) => {
-        //Create post in db if logged in, etc.
-        const formData = await event.request.formData();
-        const sesh = event.locals.session;
-        //console.log(sesh);
-        let title = formData.get('title');
-        let url = formData.get('url');
-        let description = formData.get('description');
-        let uid = sesh.user.id;
-        let name = sesh.user.user_metadata.name;//Change this to using the (todo) built in name on our user table
-
-        //Temp payload for testing. Either process tags here, or process them clientsided first
-        //UID IS TEMP for TESTING ONLY
-        const payload = {   title:title, 
-                            description:description,
-                            tags:formData.get('tags'),
-                            uid:uid,
-                            name:name,
-                            url:url
-                        };
-        const { error } = await event.locals.sb.from("Posts").insert(payload);
-        if(error){
-            console.log(error);
-        }
-    },
     edit: async (event) =>{
         let id = event.params.slug;
         const formData = await event.request.formData();
@@ -80,6 +56,18 @@ export const actions = {
             if(error){
                 console.log(error);
             }
+        }
+    },
+    delete: async(event)=>{
+        let id = event.params.slug;
+        const formData = await event.request.formData();
+
+        let {error} = await event.locals.sb.from("Posts").delete().eq('id', id);
+        if(error){
+            console.log(error);
+        }
+        else{
+            throw redirect(303, "/");
         }
 
     }
