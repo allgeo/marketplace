@@ -25,9 +25,6 @@ export async function load(event){
         t.ouid === value.ouid
     )));
 
-    //DELETE or COMMENT in build
-    console.log("Sent:", data);
-
     return{
         messages:data,
     };

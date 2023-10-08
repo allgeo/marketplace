@@ -45,6 +45,7 @@
             <LinkUnderlined text="Home" href="/" />
             <LinkUnderlined text="About us" href="/about" />
 			<LinkUnderlined text="Create a post" href="/create"/>
+			<LinkUnderlined text="Messages" href="/messages"/>
         </div>
         <div class="flex items-center justify-end flex-1 gap-x-6">
 			<form action="/logout" method="POST" use:enhance={submitLogout}>
