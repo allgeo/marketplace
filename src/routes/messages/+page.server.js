@@ -3,8 +3,7 @@ import { error } from "@sveltejs/kit";
 export async function load(event){
     let id = event.locals.session.user.id;
 
-    //Get rows, find one with provided id .or(`receiver_uid.eq.${id}`)
-    //const { data, err } = await event.locals.sb.from("Messages").select(`id, created_at, message, receiver_uid, sender_uid, Users:receiver_uid(name), Users:sender_uid(name)`);
+    //Get rows, find one with provided id
     let { data, err} = await event.locals.sb.rpc("get_other_name", {my_uid:id});
 
     //No results, return 404
