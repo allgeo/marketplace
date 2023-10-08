@@ -4,7 +4,6 @@ export async function load(event){
     //IF you want to populate the front page, you gotta use this
     console.log(event);
     const { data } = await supabaseClient.from("Posts").select();
-
     return{
         all_posts: data ?? [],
     };
