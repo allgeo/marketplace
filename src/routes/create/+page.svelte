@@ -9,7 +9,7 @@
     <form method="post" action="?/create" class="max-w-full ">
 
         <label for="title" class="block mb-2 font-bold rounded order-gray-300 ">Title</label>
-        <input type="text" name="title" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="What is your project about?">
+        <input type="text" name="title" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="What is the name of your project?">
         
         <label for="description" class="block mb-2 font-bold rounded order-gray-300 ">Description</label>
         <textarea name="description" class="w-full px-3 py-2 mb-2 border rounded focus:outline-secondary" placeholder="A brief description about your project"></textarea>

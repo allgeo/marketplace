@@ -36,8 +36,6 @@
       </div>
     </div>
     
-    
-    
     <!-- Description -->
     <div class="my-2">
       <label for="" class="text-xs text-gray-400">description</label>
@@ -47,7 +45,7 @@
     <!-- URL -->
     <div class="my-2">
       <label for="" class="text-xs text-gray-400">URL</label>
-      <a class=" hover:underline" href={data.post.url}>{data.post.url}</a>
+      <a class=" hover:underline" target="_blank" href={data.post.url}>{data.post.url}</a>
     </div>
   
     <!-- Tag -->
