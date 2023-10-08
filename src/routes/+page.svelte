@@ -5,6 +5,7 @@
 	import DefaultProjectCard from './DefaultProjectCard.svelte';
 	import UserCard from './UserCard.svelte';
 	import NotFoundAlert from './NotFoundAlert.svelte';
+	import {enhance} from "$app/forms";
 
 	export let data;
 	export let form;
@@ -47,7 +48,7 @@
 						</h2>
 					{/if}
 					<div class="mb-4 search">
-						<form method="post" action="?/search" class="flex items-center space-x-2">
+						<form method="post" action="?/search" class="flex items-center space-x-2" use:enhance>
 							<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="E.g, programing language, field, other...">
 							<button type="submit" class="px-4 py-2 rounded bg-secondary">
 								Search
@@ -114,7 +115,7 @@
 					Search for Users
 				</h2>
 				<div class="mb-4 user">
-					<form method="post" action="?/searchuser" class="flex items-center space-x-2">
+					<form method="post" action="?/searchuser" class="flex items-center space-x-2" use:enhance>
 						<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="E.g, Eric...">
 						<button type="submit" class="px-4 py-2 rounded bg-secondary">
 							Search
