@@ -39,7 +39,7 @@
         
         <!-- Tag -->
         <div class="mt-2">
-            {#each tagsArray as tagItem (tagItem)}
+            {#each tagsArray as tagItem}
                 <span class="px-2 py-1 text-[10px] text-black rounded-md bg-secondary mr-2">{tagItem}</span>
             {/each}
         </div>

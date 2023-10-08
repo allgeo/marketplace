@@ -10,14 +10,16 @@
 	export let data;
 	export let form;
 	
-	$: all_posts = data.all_posts	
-		
+	$: all_posts = data.all_posts;
+
 	// console.log("form:", form);
-	// console.log("data:", data);
-	
+	//console.log("data:", data);
+
 	onMount(() => {
 		sessionStore.set(data.session);
+		console.log(data.session);
 		setTimeout(() => {
+			console.log("hello");
 			sessionStore.set(data.session);
 			if (!data.session) {
 				window.location.href = '/login';
@@ -82,8 +84,9 @@
 				</div>
 
 				<!-- default posts -->
-				<!-- <p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Explore exixting projects</p>
+				 <p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Explore existing projects</p>
 				<div class="flex flex-wrap -mx-2">
+					{#if all_posts}
 					{#each all_posts as post}
 					<div class="w-1/3 px-2 mb-4">
 						<a href="/forum/{post.id}">
@@ -98,7 +101,8 @@
 						</a>
 						</div>
 					{/each}
-				</div> -->
+					{/if}
+				</div> 
 			</div>
 		</div>
     </div>
