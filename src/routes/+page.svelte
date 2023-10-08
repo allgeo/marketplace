@@ -1,7 +1,6 @@
 <script>
 	import { sessionStore } from '$lib/store/sessionStore';
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
 	import ProjectCard from './ProjectCard.svelte';
 	import DefaultProjectCard from './DefaultProjectCard.svelte';
 	import UserCard from './UserCard.svelte';
@@ -17,9 +16,7 @@
 
 	onMount(() => {
 		sessionStore.set(data.session);
-		console.log(data.session);
 		setTimeout(() => {
-			console.log("hello");
 			sessionStore.set(data.session);
 			if (!data.session) {
 				window.location.href = '/login';

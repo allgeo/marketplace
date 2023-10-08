@@ -61,7 +61,7 @@
 					<span class="px-4 py-4"> sign-out </span>
 				  </button>
 			</form>
-			<a href="#">
+			<a href="/user">
 				<!-- <img class="w-10 h-10 rounded-full ring-2 ring-secondary" src="https://source.boringavatars.com/beam/44/Stefan?colors=a3e635,cbf684,d0ff84" alt="avatar"> -->
 				<!-- <img class="w-10 h-10 rounded-full ring-2 ring-secondary" src="https://source.boringavatars.com/beam/44/Stefan?colors=a3e635,cbf684,d0ff84" alt="avatar"> -->
 
