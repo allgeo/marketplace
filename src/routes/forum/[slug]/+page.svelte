@@ -8,7 +8,7 @@
     const date = dateObj.toISOString().split('T')[0];
     return `${time}, ${date}`;
   }
-  console.log(data);
+
   let tagsArray = data.post.tags.split(/,| /).filter(tagItem => tagItem.trim() !== '');
 
 </script>

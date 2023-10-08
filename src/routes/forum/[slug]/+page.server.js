@@ -54,9 +54,33 @@ export const actions = {
         const formData = await event.request.formData();
 
         let {data, error} = await event.locals.sb.rpc("get_posts_with_user_id").eq("id", id).single();
-        console.log(data);
-        data.title = "123123123";
-        console.log(data);
-        let title = formData.get('title').length > 0 ? formData.get('title') : data.title;
+
+        if(data){
+            if(formData.get('title').length > 0){
+                data.title = formData.get('title');
+            }
+            if(formData.get('description').length > 0){
+                data.description = formData.get('description');
+            }
+            if(formData.get('tags').length > 0){
+                data.tags = formData.get('tags');
+            }
+            if(formData.get('url').length > 0){
+                data.url = formData.get('url');
+            }
+    
+            delete data['uid'];
+            delete data['num_id'];
+            delete data['created_at'];
+            delete data['updated_at'];
+            delete data['views'];
+            delete data['id'];
+    
+            ({error} = await event.locals.sb.from("Posts").update(data).eq('id',id));
+            if(error){
+                console.log(error);
+            }
+        }
+
     }
 }
