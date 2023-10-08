@@ -1,35 +1,31 @@
-/** @type {import('tailwindcss').Config}*/
-const config = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+// @ts-check
+import { join } from 'path';
 
-  theme: {
-    extend: {
-      animation: {
-        blob: "blob 7s infinite",
-      },
-      keyframes: {
-        blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "tranlate(0px, 0px) scale(1)",
-          },
-        },
-      },
+// 1. Import the Skeleton plugin
+import { skeleton } from '@skeletonlabs/tw-plugin';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+	// 2. Opt for dark mode to be handled via the class method
+	darkMode: 'class',
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		// 3. Append the path to the Skeleton package
+		join(require.resolve(
+			'@skeletonlabs/skeleton'),
+			'../**/*.{html,js,svelte,ts}'
+		)
+	],
+	theme: {
+		extend: {
       colors: {
         secondary: '#a3e635',
       },
     },
-  },
-
-  plugins: [],
-};
-
-module.exports = config;
+	},
+	plugins: [
+		// 4. Append the Skeleton plugin (after other plugins)
+		skeleton
+	]
+}
+						

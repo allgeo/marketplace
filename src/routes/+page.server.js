@@ -3,9 +3,9 @@ import { supabaseClient } from "$lib/supabase";
 export async function load(event){
     //IF you want to populate the front page, you gotta use this
     console.log(event);
-    const { data } = await supabaseClient.from("Forum").select();
+    const { data } = await supabaseClient.from("Posts").select();
     return{
-        entries: data ?? [],
+        all_posts: data ?? [],
     };
 }
 
@@ -37,7 +37,7 @@ export const actions = {
             //Select using parsed query
             data = await event.locals.sb.from("Posts").select().textSearch('fts', parseTerms(query));
         }
-        //console.log(data.data);
+        // console.log(data.data);
         return{
             results: data.data,
         };

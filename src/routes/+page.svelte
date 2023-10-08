@@ -3,12 +3,15 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import ProjectCard from './ProjectCard.svelte';
+	import DefaultProjectCard from './DefaultProjectCard.svelte';
 	import UserCard from './UserCard.svelte';
 	import NotFoundAlert from './NotFoundAlert.svelte';
 
 	export let data;
 	export let form;
-
+	
+	$: all_posts = data.all_posts	
+		
 	// console.log("form:", form);
 	// console.log("data:", data);
 	
@@ -25,7 +28,7 @@
 
 	// React to changes in sessionStore
 	$: if ($sessionStore) {
-		console.log($sessionStore);
+		// console.log($sessionStore);
 	}
 
 </script>
@@ -34,8 +37,8 @@
 
 <!-- NEW FLEX-GRID SYSTEM -->
 <div class="grid grid-cols-4 grid-rows-1 gap-4">
-    <!-- Left div (independent) -->
-    <div class="col-span-3 col-start-1 overflow-hidden">
+    <!-- Post div (independent) -->
+    <div class="col-span-3 col-start-1 overflow-hidden ">
         <div class="flex flex-wrap overflow-hidden">
 			<!-- Search for projects -->
 			<div class="w-full mb-1">
@@ -46,7 +49,7 @@
 					{/if}
 					<div class="mb-4 search">
 						<form method="post" action="?/search" class="flex items-center space-x-2">
-							<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="E.g, Rust...">
+							<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="E.g, programing language, field, other...">
 							<button type="submit" class="px-4 py-2 rounded bg-secondary">
 								Search
 							</button>
@@ -58,7 +61,8 @@
 				<div class="posts">
 					<ul>
 						{#if form?.results}
-						<p class="mb-2 text-gray-400">Search Results</p>
+						<p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Search result</p>
+
 						{#each form.results as result}
 						<a class="" href="/forum/{result.id}">
 							<li class="">
@@ -76,17 +80,36 @@
 						{/if}
 					</ul>
 				</div>
+
+				<!-- default posts -->
+				<!-- <p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Explore exixting projects</p>
+				<div class="flex flex-wrap -mx-2">
+					{#each all_posts as post}
+					<div class="w-1/3 px-2 mb-4">
+						<a href="/forum/{post.id}">
+							<DefaultProjectCard
+								title={post.title}
+								description={post.description}
+								views={post.views}
+								tag={post.tags}
+								userFirstLetter={post.name.charAt(0)}
+								user={post.name}
+							/>
+						</a>
+						</div>
+					{/each}
+				</div> -->
 			</div>
 		</div>
     </div>
 
-    <!-- Right div (independent) -->
+    <!-- User div (independent) -->
     <div class="col-span-1 col-start-4 overflow-hidden ">
         <div class="flex flex-wrap overflow-hidden">
 			<!-- Search for user -->
 			<div class="w-full mb-1">
 				<h2 class="mb-4 text-4xl">
-					Search for User
+					Search for Users
 				</h2>
 				<div class="mb-4 user">
 					<form method="post" action="?/searchuser" class="flex items-center space-x-2">
@@ -103,7 +126,8 @@
 					<ul>
 						{#if form?.user}
 							{#if form.user.length > 0}
-								<p class="mb-2 text-gray-400">Search Results</p>
+							<p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Search result</p>
+
 								{#each form.user as user}
 									<a class="" href="/user/{user.id}"> 
 										<li>
@@ -121,7 +145,6 @@
 							{/if}
 						{/if}
 					</ul>
-					
 				</div>
 			</div>
 		</div>
@@ -129,4 +152,3 @@
 </div>
 
 
-<!-- default posts -->
