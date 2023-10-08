@@ -13,11 +13,7 @@
 	$: all_posts = data.all_posts	
 		
 	// console.log("form:", form);
-<<<<<<< HEAD
 	// console.log("data:", data);
-=======
-	// console.log("data:", all_posts);
->>>>>>> d669318 (home page posts (commented out due to a bug))
 	
 	onMount(() => {
 		sessionStore.set(data.session);
@@ -114,7 +110,6 @@
 			<div class="w-full mb-1">
 				<h2 class="mb-4 text-4xl">
 					Search for Users
-					Search for Users
 				</h2>
 				<div class="mb-4 user">
 					<form method="post" action="?/searchuser" class="flex items-center space-x-2">
@@ -156,11 +151,4 @@
     </div>
 </div>
 
-<<<<<<< HEAD
 
-
-
-
-<!-- default posts -->
-=======
->>>>>>> d669318 (home page posts (commented out due to a bug))
