@@ -44,8 +44,14 @@
         <div class="flex rounded gap-x-12">
             <LinkUnderlined text="Home" href="/" />
             <LinkUnderlined text="About us" href="/about" />
+			<LinkUnderlined text="Messages" href="/messages"/>
         </div>
         <div class="flex items-center justify-end flex-1 gap-x-6">
+			<a href="/create">
+				<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
+					<span class="px-4 py-4"> create-post </span>
+				</button>
+			</a>
 			<a href="/create">
 				<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
 					<span class="px-4 py-4"> create-post </span>
@@ -58,10 +64,12 @@
 			</form>
 			<a href="#">
 				<!-- <img class="w-10 h-10 rounded-full ring-2 ring-secondary" src="https://source.boringavatars.com/beam/44/Stefan?colors=a3e635,cbf684,d0ff84" alt="avatar"> -->
+				<!-- <img class="w-10 h-10 rounded-full ring-2 ring-secondary" src="https://source.boringavatars.com/beam/44/Stefan?colors=a3e635,cbf684,d0ff84" alt="avatar"> -->
 
 				<div class="relative inline-flex items-center justify-center w-8 h-8 overflow-hidden bg-black rounded-full">
+				<div class="relative inline-flex items-center justify-center w-8 h-8 overflow-hidden bg-black rounded-full">
 					<span class="font-medium text-white">{data.user.user_metadata.name.charAt(0)}</span>
-				</div> -->
+				</div>
 			</a>
 		</div>
 		
