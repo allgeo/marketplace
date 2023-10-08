@@ -57,8 +57,8 @@
 
       <form method="POST" action="?/msg">
         <label for="message">Send a message:</label>
-        <textarea name="message"></textarea><br>
-        <input type="submit" value="Send">
+        <textarea name="message" class="block w-full rounded-lg text-sm bg-gray-300"></textarea>
+        <input type="submit" value="Send" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
       </form>
 
       {/if}
