@@ -3,17 +3,17 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import ProjectCard from './ProjectCard.svelte';
+	import DefaultProjectCard from './DefaultProjectCard.svelte';
 	import UserCard from './UserCard.svelte';
 	import NotFoundAlert from './NotFoundAlert.svelte';
 
 	export let data;
 	export let form;
 	
-	let all_posts = data.all_posts	
-	// const titles = all_posts.map(post => post.title);
-	
+	$: all_posts = data.all_posts	
+		
 	// console.log("form:", form);
-	console.log("data:", all_posts);
+	// console.log("data:", all_posts);
 	
 	onMount(() => {
 		sessionStore.set(data.session);
@@ -49,7 +49,7 @@
 					{/if}
 					<div class="mb-4 search">
 						<form method="post" action="?/search" class="flex items-center space-x-2">
-							<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="E.g, Rust...">
+							<input type="text" name="terms" class="flex-grow px-3 py-2 border border-gray-300 rounded focus:outline-secondary" placeholder="E.g, programing language, field, other...">
 							<button type="submit" class="px-4 py-2 rounded bg-secondary">
 								Search
 							</button>
@@ -61,7 +61,8 @@
 				<div class="posts">
 					<ul>
 						{#if form?.results}
-						<p class="mb-2 text-gray-400">Search results</p>
+						<p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Search result</p>
+
 						{#each form.results as result}
 						<a class="" href="/forum/{result.id}">
 							<li class="">
@@ -79,26 +80,25 @@
 						{/if}
 					</ul>
 				</div>
-				<!-- New Post -->
-				<a href="/create">
-					<div class="flex items-center justify-center p-2 mb-2 text-white rounded-lg shadow-md align-center bg-lime-400">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-						  </svg>						  
-					</div>
-				</a>
+
 				<!-- default posts -->
-				<div class="flex flex-wrap my-4">
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
-					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
-				</div>
+				<!-- <p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Explore exixting projects</p>
+				<div class="flex flex-wrap -mx-2">
+					{#each all_posts as post}
+					<div class="w-1/3 px-2 mb-4">
+						<a href="/forum/{post.id}">
+							<DefaultProjectCard
+								title={post.title}
+								description={post.description}
+								views={post.views}
+								tag={post.tags}
+								userFirstLetter={post.name.charAt(0)}
+								user={post.name}
+							/>
+						</a>
+						</div>
+					{/each}
+				</div> -->
 			</div>
 		</div>
     </div>
@@ -126,7 +126,8 @@
 					<ul>
 						{#if form?.user}
 							{#if form.user.length > 0}
-								<p class="mb-2 text-gray-400">Search results</p>
+							<p class="p-1 mb-2 text-gray-400 rounded bg-slate-100 w-fit">Search result</p>
+
 								{#each form.user as user}
 									<a class="" href="/user/{user.id}"> 
 										<li>
@@ -150,9 +151,3 @@
     </div>
 </div>
 
-<!-- 
- <ul>
-    {#each all_posts.posts as post}
-      <li>{post.title}</li>
-    {/each}
-</ul>   -->
