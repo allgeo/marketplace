@@ -25,7 +25,7 @@
       <!-- User avatar -->
       <div class="my-2">
         <div class="flex items-center space-x-2">
-          <a href="/">
+          <a href="/user/{data.post.num_id}">
         <span for="" class="text-xs text-gray-400">by</span>
         <span class="text-sm text-gray-600">{data.post.name}</span>
             <div class="relative inline-flex items-center justify-center w-8 h-8 overflow-hidden rounded-full bg-secondary">

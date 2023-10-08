@@ -3,7 +3,7 @@ import { supabaseClient } from "$lib/supabase";
 export async function load(event){
     //IF you want to populate the front page, you gotta use this
     //console.log(event);
-    const { data } = await event.locals.sb.from("Posts").select();
+    const { data, error } = await event.locals.sb.rpc("get_posts_with_user_id");
     return{
         all_posts: data ?? [],
     };

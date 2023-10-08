@@ -4,7 +4,7 @@ export async function load(event){
     let id = event.params.slug;
 
     //Get rows, find one with provided id
-    const { data } = await event.locals.sb.from("Posts").select().eq("id", id);
+    const { data } = await event.locals.sb.rpc("get_posts_with_user_id").eq("id", id);
     //console.log(id);
     //console.log(data);
     

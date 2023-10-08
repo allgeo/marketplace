@@ -11,6 +11,7 @@
 	export let form;
 	
 	$: all_posts = data.all_posts;
+	console.log(data.all_posts);
 
 	// console.log("form:", form);
 	//console.log("data:", data);
