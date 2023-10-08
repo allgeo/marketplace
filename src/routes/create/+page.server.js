@@ -37,7 +37,7 @@ export const actions = {
                             url:url
                         };
         let {data, error } = await event.locals.sb.from("Posts").insert(payload).select().single();
-        console.log(data);
+
         if(error){
             console.log(error);
         }
