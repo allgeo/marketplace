@@ -73,9 +73,8 @@ export const actions = {
 
             if(message.length > 0){
                 ({data, error} = await event.locals.sb.from("Messages").insert(payload).select().single());
-                console.log(data, error);
                 if(data){
-                    throw redirect(307, `/messages/${data.id}`);
+                    throw redirect(303, `/messages/${data.id}`);
                 }
             }
         }

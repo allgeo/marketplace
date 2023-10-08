@@ -1,4 +1,5 @@
 <script>
+  import {enhance} from "$app/forms";
   export let data;
 
   function formatTimestamp(timestamp) {
@@ -7,7 +8,7 @@
     const date = dateObj.toISOString().split('T')[0];
     return `${time}, ${date}`;
   }
-
+  console.log(data);
   let tagsArray = data.post.tags.split(/,| /).filter(tagItem => tagItem.trim() !== '');
 
 </script>
@@ -59,6 +60,27 @@
         <label for="" class="text-xs text-gray-400">updated-at</label>
         <p class="">{formatTimestamp(data.post.updated_at)}</p>
       </div>
+
+      {#if data.post.uid === data.session.user.id}
+      <div class="my-2 bg-gray-300"> <!--TEMP GRAY BG FOR VISIBLITY, REPLACE CSS W/SMTH THAT LOOKS GOOD INSTEAD-->
+        <form method="POST" action="?/edit" use:enhance>
+          <label for="title" class="block mb-2 font-bold rounded order-gray-300 ">Title</label>
+          <input type="text" name="title">
+          <label for="description" class="block mb-2 font-bold rounded order-gray-300 ">Description</label>
+          <textarea name="description"></textarea>
+          <label for="tags" class="block mb-2 font-bold rounded order-gray-300 ">Tags</label>
+          <input type="text" name="tags">
+          <label for="url" class="block mb-2 font-bold rounded order-gray-300 ">URL</label>
+          <input type="text" name="url">
+          <div class="flex justify-start mt-4">
+            <button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
+                <span class="px-4 py-4"> Edit post </span>
+              </button>
+        </div>
+        </form>
+      </div>
+      {/if}
+
   </div>
   
 </div>
