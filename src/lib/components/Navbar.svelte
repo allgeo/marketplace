@@ -48,12 +48,12 @@
         <div class="flex items-center justify-end flex-1 gap-x-6">
 			<a href="/messages">
 				<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
-					<span class="px-4 py-4"> message </span>
+					<span class="px-4 py-4"> messages </span>
 				</button>
 			</a>
 			<a href="/create">
 				<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
-					<span class="px-4 py-4"> create-post </span>
+					<span class="px-4 py-4"> post </span>
 				</button>
 			</a>
 			<form action="/logout" method="POST" use:enhance={submitLogout}>
@@ -72,7 +72,7 @@
 		</div>
 		
       {:else}
-			<div class="flex items-center justify-end flex-1 gap-x-6">
+			<!-- <div class="flex items-center justify-end flex-1 gap-x-6">
 				{#if $page.url.pathname != "/login"}
 				<form action="/login" method="POST" use:enhance={submitLogout}>
 					<button type="submit" class="px-1 py-1 text-sm text-black duration-300 ease-in-out rounded-md bg-secondary hover:bg-lime-500">
@@ -80,7 +80,7 @@
 					</button>
 				</form>
 				{/if}
-			</div>
+			</div> -->
 
     	{/if}
     </nav>

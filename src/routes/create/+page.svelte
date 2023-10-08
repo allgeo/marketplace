@@ -1,3 +1,10 @@
+<script>
+	import { goto } from '$app/navigation';
+    function goMain(){
+		goto('/');
+	}
+</script>
+
 <div class="create">
     <form method="post" action="?/create" class="max-w-full ">
 

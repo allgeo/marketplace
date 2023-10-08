@@ -32,9 +32,10 @@
 
 <div class="relative max-w-6xl pt-8">
 	<h1 class="font-bold text-[10rem] leading-none ">
-	  <span class=" leading"> Open-source</span>
-	  <span class="text-black leading text-7xl bg-secondary"> Made</span> Easier!
-	</h1>
+		<span class=" leading"> Open-source</span>
+		<span class="hidden leading"> Open-science</span>
+		<span class="text-black leading text-7xl bg-secondary"> Made</span> Easier!
+	  </h1>
 	<div class="py-6 ">
 	  <p class="text-xl font-thin w-fit">Start your open source journey today.</p>
 	</div>

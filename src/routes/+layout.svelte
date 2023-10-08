@@ -24,7 +24,7 @@
 
 <div class="dot">
 	<Navbar data={data.session} />
-	<main class="max-w-[90rem] h-screen mx-auto mt-20"> 
+	<main class="max-w-[90rem] h-screen mx-auto mt-16"> 
 	  <slot />
 	</main>	
 </div>
