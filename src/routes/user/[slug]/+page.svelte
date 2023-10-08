@@ -8,7 +8,11 @@
 
 
   <div class="flex justify-center">
+    
     <div class="w-1/3 p-2 mb-2 bg-white border rounded-lg shadow-md border-lime-100">
+    {#if data.post.name.length === 0}
+    <p class="">Please set your name, description and some tags about what skills you have.</p>
+    {/if}
       <!-- User avatar -->
       <div class="my-2">
         <label for="" class="mb-2 text-xs text-gray-400 ">name</label>
