@@ -53,9 +53,11 @@
 				  </button>
 			</form>
 			<a href="#">
-				<div class="relative inline-flex items-center justify-center w-8 h-8 overflow-hidden bg-black rounded-full">
+				<img class="w-10 h-10 rounded-full ring-2 ring-secondary" src="https://source.boringavatars.com/beam/44/Stefan?colors=a3e635,cbf684,d0ff84" alt="avatar">
+
+				<!-- <div class="relative inline-flex items-center justify-center w-8 h-8 overflow-hidden bg-black rounded-full">
 					<span class="font-medium text-white">{data.user.user_metadata.name.charAt(0)}</span>
-				</div>
+				</div> -->
 			</a>
 		</div>
 		

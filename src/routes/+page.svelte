@@ -8,9 +8,12 @@
 
 	export let data;
 	export let form;
-
+	
+	let all_posts = data.all_posts	
+	// const titles = all_posts.map(post => post.title);
+	
 	// console.log("form:", form);
-	// console.log("data:", data);
+	console.log("data:", all_posts);
 	
 	onMount(() => {
 		sessionStore.set(data.session);
@@ -25,7 +28,7 @@
 
 	// React to changes in sessionStore
 	$: if ($sessionStore) {
-		console.log($sessionStore);
+		// console.log($sessionStore);
 	}
 
 </script>
@@ -58,7 +61,7 @@
 				<div class="posts">
 					<ul>
 						{#if form?.results}
-						<p class="mb-2 text-gray-400">Search Results</p>
+						<p class="mb-2 text-gray-400">Search results</p>
 						{#each form.results as result}
 						<a class="" href="/forum/{result.id}">
 							<li class="">
@@ -84,6 +87,18 @@
 						  </svg>						  
 					</div>
 				</a>
+				<!-- default posts -->
+				<div class="flex flex-wrap my-4">
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-200"></div>
+					<div class="w-1/3 h-48 mb-4 rounded-md bg-lime-100"></div>
+				</div>
 			</div>
 		</div>
     </div>
@@ -94,7 +109,7 @@
 			<!-- Search for user -->
 			<div class="w-full mb-1">
 				<h2 class="mb-4 text-4xl">
-					Search for User
+					Search for Users
 				</h2>
 				<div class="mb-4 user">
 					<form method="post" action="?/searchuser" class="flex items-center space-x-2">
@@ -111,7 +126,7 @@
 					<ul>
 						{#if form?.user}
 							{#if form.user.length > 0}
-								<p class="mb-2 text-gray-400">Search Results</p>
+								<p class="mb-2 text-gray-400">Search results</p>
 								{#each form.user as user}
 									<a class="" href="/user/{user.id}"> 
 										<li>
@@ -129,15 +144,15 @@
 							{/if}
 						{/if}
 					</ul>
-					
 				</div>
 			</div>
 		</div>
     </div>
 </div>
 
-
-
-
-
-<!-- default posts -->
+<!-- 
+ <ul>
+    {#each all_posts.posts as post}
+      <li>{post.title}</li>
+    {/each}
+</ul>   -->

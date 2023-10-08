@@ -1,9 +1,10 @@
 import { supabaseClient } from "$lib/supabase";
 
 export async function load(){
-    const { data } = await supabaseClient.from("Forum").select();
+    const { data } = await supabaseClient.from("Posts").select();
+
     return{
-        entries: data ?? [],
+        all_posts: data ?? [],
     };
 }
 
@@ -35,7 +36,7 @@ export const actions = {
             //Select using parsed query
             data = await event.locals.sb.from("Posts").select().textSearch('fts', parseTerms(query));
         }
-        //console.log(data.data);
+        // console.log(data.data);
         return{
             results: data.data,
         };
