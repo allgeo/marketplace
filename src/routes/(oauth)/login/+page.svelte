@@ -6,7 +6,8 @@
 
 	const signInWithProvider = async (provider: Provider) => {
 		const { data, error } = await supabaseClient.auth.signInWithOAuth({
-			provider: provider
+			provider: provider,
+			redirectTo: `https://syntax-sorcerers.onrender.com/user`
 		});
 	};
 
@@ -24,7 +25,7 @@
 	export let data;
 	onMount(() => {
 		if (data.session) {
-			window.location.href = ('/');
+			window.location.href = (`/`);
 		}
 	});
 </script>
