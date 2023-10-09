@@ -32,8 +32,7 @@
 	}
 
 </script>
-
-<!-- <p class="flex justify-center mb-2 bg-black text-rose-500">The borders are there to visualize the grid system, delete after</p> -->
+<p class="flex justify-center mb-8 text-white bg-black">Discover <span class="pl-2 font-bold text-secondary">openhub</span>, a curation of open-source/science projects and contributors.</p>
 
 <!-- NEW FLEX-GRID SYSTEM -->
 <div class="grid grid-cols-4 grid-rows-1 gap-4">

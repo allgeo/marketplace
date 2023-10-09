@@ -38,7 +38,7 @@
 		<span class="text-black leading text-7xl bg-secondary"> Made</span> Easier!
 	  </h1>
 	<div class="py-6 ">
-	  <p class="text-xl font-thin w-fit">Start your open source journey today.</p>
+	  <p class="text-xl font-thin w-fit">A job board apprach to finding open-source projects</p>
 	</div>
   
 	<div class="flex gap-4 justify-left">

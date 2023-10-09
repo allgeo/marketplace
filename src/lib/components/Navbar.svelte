@@ -37,7 +37,9 @@
       <div class="flex flex-1">
         <a href="/" class="-m-1.5 p-1.5 ">
 			<!-- <img class="inline-block w-auto h-6" src="/branch.png" alt=""> -->
-			<span class="text-lg font-bold bg-black text-secondary">marketplace</span> 
+			<span class="bg-gray-700 text-[10px] rounded">
+				<span class="text-3xl font-bold text-lime-400">openhub</span>
+			  </span>
         </a>
       </div>
       {#if data}	
