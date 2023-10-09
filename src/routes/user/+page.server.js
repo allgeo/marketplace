@@ -8,7 +8,7 @@ export async function load(event){
 
     if(data){
         if(data.id){
-            throw redirect(307, `/user/${data.id}`);
+            throw redirect(303, `/user/${data.id}`);
         }
     }
     throw redirect(404, `/`);
