@@ -7,7 +7,7 @@ export async function load(event){
     let uid = event.locals.session.user.id;
 
     //Get one entry from message table
-    let { data, err } = await event.locals.sb.from('Messages').select().eq('id', id);
+    let { data, err } = await event.locals.sb.rpc("get_other_name", {my_uid:uid}).eq('id',id);
 
     //Ensure query worked
     if(data == null){
@@ -17,13 +17,16 @@ export async function load(event){
         throw error(404, 'Messages not found');
     }
     let ouid = null;
+    let othername = "";
 
     //Prevent people from accessing other ppls logs by using the url
     if(data[0].receiver_uid !== uid && data[0].sender_uid !== uid){
         throw error(404, 'Messages not found')
     }
 
+    othername = data[0].name;
     ouid = data[0].receiver_uid === uid ? data[0].sender_uid : data[0].receiver_uid;
+    ({data, err})
 
     if(ouid == null){
         throw error(404, 'Messages not found');
@@ -34,6 +37,7 @@ export async function load(event){
 
     return{
         messages:data,
+        othername:othername
     };
     
 }

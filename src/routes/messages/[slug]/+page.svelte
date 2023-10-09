@@ -10,7 +10,7 @@
     <div class="users">
         <ul >
             {#if data?.messages}
-            <h1 class="mb-4 text-xl font-semibold">{data.messages[1].name}</h1>
+            <h1 class="mb-4 text-xl font-semibold">{data.othername}</h1>
             {#each data.messages as person}
                 <li class="flex items-center justify-between">
                     <div>
