@@ -39,7 +39,7 @@ export const actions = {
                 data.description = formData.get('description');
             }
             if(formData.get('tags').length > 0){
-                data.tags = formData.get('tags');
+                data.tags = formData.get('tags');ç
             }
             if(formData.get('url').length > 0){
                 data.url = formData.get('url');
